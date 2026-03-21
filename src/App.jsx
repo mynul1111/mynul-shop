@@ -21,14 +21,16 @@ import ChangePassword from './components/dashboard/ChangePassword';
 import Order from './components/dashboard/Order';
 import Chat from './components/dashboard/Chat';
 import ConfirmOrder from './pages/ConfirmOrder';
+
 function App() {
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(get_category())
-  }, [])
+  }, [dispatch]) // ✅ FIXED
+
   return (
     <div className='max-w-screen min-h-screen'>
-
       <BrowserRouter>
         <Routes>
           <Route path='/register' element={<Register />} />
