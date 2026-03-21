@@ -31,7 +31,7 @@ const Banner = () => {
 
     useEffect(() => {
         dispatch(get_banners())
-    }, [])
+    }, [dispatch])
     return (
         <div className='w-full md-lg:mt-6'>
             <div className='max-w-[1440px] mx-auto px-16 sm:px-5 md-lg:px-12 md:px-10'>

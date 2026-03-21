@@ -6,23 +6,30 @@ import Categorys from '../components/Categorys'
 import FeatureProducts from '../components/products/FeatureProducts'
 import Products from '../components/products/Products'
 import Footer from '../components/Footer'
-import { get_category, get_products } from '../store/reducers/homeReducer'
+import { get_products } from '../store/reducers/homeReducer'
+
 const Home = () => {
     const dispatch = useDispatch()
-    const {products, latest_product, topRated_product, discount_product } = useSelector(state => state.home)
+
+    const { products, latest_product, topRated_product, discount_product } = useSelector(state => state.home)
+
     useEffect(() => {
         dispatch(get_products())
-    }, [])
+    }, [dispatch]) // ✅ FIXED
+
     return (
         <div className='w-full'>
             <Heders />
             <Banner />
+
             <div className='my-4 max-w-[1440px] mx-auto px-16 sm:px-5 md-lg:px-12 md:px-10'>
                 <Categorys />
             </div>
+
             <div className='py-[45px] max-w-[1440px] mx-auto px-16 sm:px-5 md-lg:px-12 md:px-10'>
                 <FeatureProducts products={products} />
             </div>
+
             <div className='py-10'>
                 <div className='max-w-[1440px] mx-auto px-16 sm:px-5 md-lg:px-12 md:px-10 flex flex-wrap'>
                     <div className="grid w-full grid-cols-3 md-lg:grid-cols-2 md:grid-cols-1 gap-7">
@@ -38,6 +45,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
             <Footer />
         </div>
     )
