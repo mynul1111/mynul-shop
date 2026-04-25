@@ -21,7 +21,7 @@ const Footer = () => {
                         <ul className='flex flex-col gap-2 text-slate-700'>
                             <li>Address :  Barishal, Jhalakathi</li>
                             <li>Phone : 01325-796178</li>
-                            <li>Email : mdmynulislam19@gmail.com</li>
+                            <li>Email : islammdmynul19@gmail.com</li>
                         </ul>
                     </div>
                 </div>
